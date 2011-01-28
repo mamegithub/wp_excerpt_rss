@@ -9,6 +9,7 @@
 add_filter("the_content_feed", "wp_excerpt_rss");
 function wp_excerpt_rss($content) {
     $image = null;
+
     if(function_exists("get_the_post_thumbnail") && has_post_thumbnail(get_the_ID(), "post-thumbnail")) {
         $image = get_the_post_thumbnail(get_the_ID(), "post-thumbnail");
     }
@@ -23,7 +24,6 @@ function wp_excerpt_rss($content) {
         $content = "<p>". $image. "</p>". $content;
 
     return $content;
-    #return $content;
 }
 
 
