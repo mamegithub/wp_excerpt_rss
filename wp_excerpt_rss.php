@@ -4,6 +4,7 @@
  * Author Name: Nully
  * Author URI: http://blog.nully.org/
  * Description: RSS2のフィードを抜粋表示にし、投稿サムネイルを表示します。
+ * Plugin Version: 1.0
  */
 add_filter("the_content_feed", "wp_excerpt_rss");
 function wp_excerpt_rss($content) {
