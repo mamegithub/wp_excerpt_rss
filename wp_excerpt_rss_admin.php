@@ -135,7 +135,11 @@ function _wp_excerpt_rss_admin_get_image_sizes() {
         ),*/
    );
 
-    $sizes = array_merge($default_sizes, $_wp_additional_image_sizes);
+    $image_sizes = $_wp_additional_image_sizes;
+    if(empty($image_sizes))
+        $image_sizes = array();
+
+    $sizes = array_merge($default_sizes, $image_sizes);
     return $sizes;
 }
 
